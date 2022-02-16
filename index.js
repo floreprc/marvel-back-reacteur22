@@ -13,6 +13,10 @@ app.use(comicsRoutes);
 const charactersRoutes = require("./routes/characters");
 app.use(charactersRoutes);
 
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome on my Marvel API" });
+});
+
 // Server launch
 app.listen(process.env.PORT, () => {
   console.log("It works ! 🦸");
