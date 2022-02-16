@@ -14,7 +14,7 @@ const charactersRoutes = require("./routes/characters");
 app.use(charactersRoutes);
 
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome on my Marvel API" });
+  res.json({ message: "Welcome on my Marvel API 🦸" });
 });
 
 // Server launch
