@@ -14,6 +14,9 @@ const charactersRoutes = require("./routes/characters");
 app.use(charactersRoutes);
 
 // Server launch
-app.listen(3001, () => {
-  console.log("It works !🦸");
+app.listen(process.env.PORT, () => {
+  console.log("It works ! 🦸");
 });
+// app.listen(3001, () => {
+//   console.log("It works !🦸");
+// });
