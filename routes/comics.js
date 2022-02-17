@@ -11,8 +11,18 @@ router.get("/comics", async (req, res) => {
       );
       res.json(response.data);
     } else {
+      let toAdd = "";
+      if (req.query.title) {
+        toAdd += "name=" + req.query.title + "&";
+      }
+      if (req.query.limit) {
+        toAdd += "limit=" + req.query.limit + "&";
+      }
+      if (req.query.skip) {
+        toAdd += "skip=" + req.query.skip + "&";
+      }
       const response = await axios.get(
-        "https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=bLOIPCQksXrpIGgO"
+        `https://lereacteur-marvel-api.herokuapp.com/comics?${toAdd}apiKey=bLOIPCQksXrpIGgO`
       );
       res.json(response.data);
     }

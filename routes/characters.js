@@ -7,7 +7,13 @@ router.get("/characters", async (req, res) => {
   try {
     let toAdd = "";
     if (req.query.name) {
-      toAdd = "name=" + req.query.name + "&";
+      toAdd += "name=" + req.query.name + "&";
+    }
+    if (req.query.limit) {
+      toAdd += "limit=" + req.query.limit + "&";
+    }
+    if (req.query.skip) {
+      toAdd += "skip=" + req.query.skip + "&";
     }
     const response = await axios.get(
       `https://lereacteur-marvel-api.herokuapp.com/characters?${toAdd}apiKey=bLOIPCQksXrpIGgO`
