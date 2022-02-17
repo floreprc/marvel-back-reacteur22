@@ -29,7 +29,7 @@ router.get("/character", async (req, res) => {
   try {
     if (req.query.characterId) {
       const response = await axios.get(
-        `https://lereacteur-marvel-api.herokuapp.com/character/5fcf91f4d8a2480017b91453?apiKey=bLOIPCQksXrpIGgO`
+        `https://lereacteur-marvel-api.herokuapp.com/character/${req.query.characterId}&apiKey=bLOIPCQksXrpIGgO`
       );
       res.json(response.data);
     } else {
