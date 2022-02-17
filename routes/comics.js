@@ -13,7 +13,7 @@ router.get("/comics", async (req, res) => {
     } else {
       let toAdd = "";
       if (req.query.title) {
-        toAdd += "name=" + req.query.title + "&";
+        toAdd += "title=" + req.query.title + "&";
       }
       if (req.query.limit) {
         toAdd += "limit=" + req.query.limit + "&";
